@@ -6,32 +6,27 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
-          int x;//declaration
-            x = 123; //initialization
-            int y = 321;
 
-            int z = x + y;
+            double a = 3.14;
+            int b = Convert.ToInt32(a);
 
-            int age = 21;
-            double height = 300.5;
-            bool alive = true;
-            char symbol = '@';
-            String name = "Bro";
+            int c = 123;
+            double d = Convert.ToDouble(c) + 0.1;
 
-            Console.WriteLine("Hello " + name);
+            int e = 321;
+            String f = Convert.ToString(e);
 
+            String g = "$";
+            char h = Convert.ToChar(g);
 
-            Console.WriteLine(x);
-            Console.WriteLine(y);
-            Console.WriteLine(z);
-            Console.WriteLine("your age is " + age);
-            Console.WriteLine("Your height is " + height + " cm");
-            Console.WriteLine("Are you alive? "+ alive);
-            Console.WriteLine("Your symbol is: " + symbol);
+            String i = "true";
+            bool j = Convert.ToBoolean(i);
 
-            String userName = symbol + name;
-            Console.WriteLine("YOur username is: " + userName);
-
+            Console.WriteLine(b.GetType());
+            Console.WriteLine(d.GetType());
+            Console.WriteLine(f.GetType());
+            Console.WriteLine(h.GetType());
+            Console.WriteLine(j.GetType());
             Console.ReadKey();
 
 
