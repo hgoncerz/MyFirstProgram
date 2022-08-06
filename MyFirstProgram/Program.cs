@@ -6,15 +6,14 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("What's your name?");
-            String name = Console.ReadLine();
-            Console.WriteLine("Hello " + name);
+            Console.WriteLine("Hello enter a");
+            double a = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("enter b");
+            double b = Convert.ToDouble(Console.ReadLine());
 
+            double c = Math.Sqrt(Math.Pow(a,2) + Math.Pow(b,2));
+            Console.WriteLine("Result is: "+c);
 
-            Console.WriteLine("What's your age?");
-            int age = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("Your age " + age + "years old");
             Console.ReadKey();
 
 
