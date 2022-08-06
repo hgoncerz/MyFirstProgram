@@ -6,19 +6,35 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
-            Console.Write("hello");
-            Console.WriteLine("Hello!");
+          int x;//declaration
+            x = 123; //initialization
+            int y = 321;
 
-            //This is a comment
-            /*
-             siema
-            sdfasd
-            dasdfasdfasdf
-            asdf
-             */
-            Console.WriteLine("");
+            int z = x + y;
+
+            int age = 21;
+            double height = 300.5;
+            bool alive = true;
+            char symbol = '@';
+            String name = "Bro";
+
+            Console.WriteLine("Hello " + name);
+
+
+            Console.WriteLine(x);
+            Console.WriteLine(y);
+            Console.WriteLine(z);
+            Console.WriteLine("your age is " + age);
+            Console.WriteLine("Your height is " + height + " cm");
+            Console.WriteLine("Are you alive? "+ alive);
+            Console.WriteLine("Your symbol is: " + symbol);
+
+            String userName = symbol + name;
+            Console.WriteLine("YOur username is: " + userName);
 
             Console.ReadKey();
+
+
         }
     }
 }
