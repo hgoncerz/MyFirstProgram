@@ -7,21 +7,44 @@ namespace MyFirstProgram
         static void Main(string[] args)
         {
 
-            double total;
-            total = CheckOut(3.99, 5.75, 15);
-
-            Console.WriteLine(total);
-            Console.ReadKey();
-
-        }
-        static double CheckOut(params double[] prices)
-        {
-            double total = 0;
-            foreach(double price in prices)
+            double x;
+            double y;
+            double result;
+            try
             {
-                total += price;
+                Console.Write("Enter number 1: ");
+                x = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write("Enter number 2: ");
+                y = Convert.ToInt32(Console.ReadLine());
+
+                result = x / y;
+
+                Console.WriteLine("result: " + result);
             }
-            return total;
+            catch(FormatException e)
+            {
+                Console.WriteLine("Enter only number ");
+
+            }
+            catch (DivideByZeroException e)
+            {
+                Console.WriteLine("you can't divde by zero idiot");
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("something went wrong!");
+            }
+            finally
+            {
+                Console.WriteLine("Thanks for visiting");
+            }
+
+
+            Console.ReadLine();
+
         }
+    
     }
 }
