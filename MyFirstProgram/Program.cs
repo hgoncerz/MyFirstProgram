@@ -16,6 +16,7 @@ namespace MyFirstProgram
             asdf
              */
             Console.WriteLine("");
+            Console.WriteLine("test two");
 
             Console.ReadKey();
         }
