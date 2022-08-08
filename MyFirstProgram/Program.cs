@@ -6,30 +6,36 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
-            Car car1 = new Car("Mustang", "red");
+            Dog dog = new Dog();
+            Cat cat = new Cat();
 
-            Car car2 = Copy(car1);
-
-            Console.WriteLine(car2.color + " " + car2.model);
+            dog.Speak();
+            cat.Speak();
 
             Console.ReadKey();
-        }
-        public static Car Copy(Car car)
-        {
-            return new Car(car.model, car.color);
         }
         
     }
 
-    class Car
+    class Animal
     {
-        public String model;
-        public String color;
-
-        public Car(String model, string color)
+        public virtual void Speak()
         {
-            this.model = model;
-            this.color = color;
+            Console.WriteLine("The animal goes brr");
+        }
+    }
+    class Dog : Animal
+    {
+        public override void Speak()
+        {
+            Console.WriteLine("The dog goes woof!");
+        }
+    }
+    class Cat : Animal
+    {
+        public override void Speak()
+        {
+            Console.WriteLine("The dog goes mial");
         }
     }
 
