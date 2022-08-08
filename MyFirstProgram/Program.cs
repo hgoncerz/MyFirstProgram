@@ -8,35 +8,38 @@ namespace MyFirstProgram
         static void Main(string[] args)
         {
 
-            List <Player> players = new List <Player> ();
-            Player player1 = new Player("Chad");
-            Player player2 = new Player("Steve");
-            Player player3 = new Player("Karen");
+            Car car = new Car(400);
 
-            players.Add(player1);
-            players.Add(player2);
-            players.Add(player3);
+            car.Speed = 10000000;
 
-            foreach(Player player in players)
-            {
-                Console.WriteLine(player);
-            }
+            Console.WriteLine(car.Speed);
 
             Console.ReadKey();
         }
         
     }
-    class Player
+    class Car
     {
-        public String username;
+        private int speed;
 
-        public Player(String username)
+        public Car(int speed)
         {
-            this.username = username; 
+           Speed = speed;
         }
-        public override string ToString()
+
+        public int Speed
         {
-            return username;
+            get { return speed; } //read 
+            set {
+                if (value > 500)
+                {
+                    speed = 500;
+                }
+                else
+                {
+                    speed = value; 
+                }
+            }
         }
     }
 
