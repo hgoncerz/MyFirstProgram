@@ -6,39 +6,46 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
-            Pizza pizza = new Pizza("stuffed crust", "red","mozzarella","pepperoni");
+            Car car = new Car();
+            Bicycle bicycle = new Bicycle();
+            Boat boat = new Boat();
+
+            car.go();
+            Console.WriteLine(car.speed);
+            Console.WriteLine(car.wheels);
+
+            bicycle.go();
+            Console.WriteLine(bicycle.speed);
+            Console.WriteLine(bicycle.wheels);
+                        
+            boat.go();
+            Console.WriteLine(boat.speed);
+            Console.WriteLine(boat.wheels);
+
 
             Console.ReadKey();
         }
     }
-    class Pizza
+    class Vehicle
     {
-        String bread;
-        String sauce;
-        String cheese;
-        String topping;
-        public Pizza(string bread)
-        {
-            this.bread = bread;
-        }
+        public int speed = 0;
 
-        public Pizza(string bread, string sauce)
+        public void go()
         {
-            this.bread = bread;
-            this.sauce = sauce;
-        }
-        public Pizza(string bread, string sauce, string cheese)
-        {
-            this.bread = bread;
-            this.sauce = sauce;
-            this.cheese = cheese;
-        }
-        public Pizza(string bread, string sauce, string cheese, string topping)
-        {
-            this.bread = bread;
-            this.sauce = sauce;
-            this.cheese = cheese;
-            this.topping = topping;
+            Console.WriteLine("This vehicle is moving");
         }
     }
+    class Car : Vehicle
+    {
+        public int wheels = 4;
+    }
+    class Bicycle: Vehicle
+    {
+        public int wheels = 2;
+    }
+    class Boat : Vehicle
+    {
+        public int wheels = 0;
+    }
+
 }
