@@ -8,39 +8,35 @@ namespace MyFirstProgram
         static void Main(string[] args)
         {
 
-            Car car = new Car(400);
+            /*Console.WriteLine(Planets.Earth + "is a planet #"+(int)Planets.Earth);*/
+            String name = PlanetRadius.Earth.ToString();
+            int radius = (int)PlanetRadius.Earth;
 
-            car.Speed = 10000000;
+            double volume = Volume(PlanetRadius.Earth);
 
-            Console.WriteLine(car.Speed);
-
+            Console.WriteLine("planet: " + name);
+            Console.WriteLine("Radius: " + radius);
+            Console.WriteLine("Volume " + volume);
             Console.ReadKey();
+        }
+        public static double Volume(PlanetRadius radius)
+        {
+            double volume = (4.0 / 3.0) * Math.PI * Math.Pow((int)radius, 3);
+            return volume;
         }
         
     }
-    class Car
+    enum Planets
     {
-        private int speed;
-
-        public Car(int speed)
-        {
-           Speed = speed;
-        }
-
-        public int Speed
-        {
-            get { return speed; } //read 
-            set {
-                if (value > 500)
-                {
-                    speed = 500;
-                }
-                else
-                {
-                    speed = value; 
-                }
-            }
-        }
+        Mercury,
+        Vnus,
+        Earth
+    }
+    enum PlanetRadius
+    {
+        Mercury = 2439,
+        Venus = 6051,
+        Earth = 6471
     }
 
 }
