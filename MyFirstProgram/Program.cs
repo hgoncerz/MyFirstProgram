@@ -6,19 +6,39 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
-            Console.Write("hello");
-            Console.WriteLine("Hello!");
-
-            //This is a comment
-            /*
-             siema
-            sdfasd
-            asdf
-             */
-            Console.WriteLine("");
-            Console.WriteLine("test two");
+            Pizza pizza = new Pizza("stuffed crust", "red","mozzarella","pepperoni");
 
             Console.ReadKey();
+        }
+    }
+    class Pizza
+    {
+        String bread;
+        String sauce;
+        String cheese;
+        String topping;
+        public Pizza(string bread)
+        {
+            this.bread = bread;
+        }
+
+        public Pizza(string bread, string sauce)
+        {
+            this.bread = bread;
+            this.sauce = sauce;
+        }
+        public Pizza(string bread, string sauce, string cheese)
+        {
+            this.bread = bread;
+            this.sauce = sauce;
+            this.cheese = cheese;
+        }
+        public Pizza(string bread, string sauce, string cheese, string topping)
+        {
+            this.bread = bread;
+            this.sauce = sauce;
+            this.cheese = cheese;
+            this.topping = topping;
         }
     }
 }
