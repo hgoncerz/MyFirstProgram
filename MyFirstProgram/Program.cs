@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace MyFirstProgram
 {
@@ -6,53 +7,39 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
-            Rabbit rabbit = new Rabbit();
-            Hawk hawk = new Hawk();
-            Fish fish = new Fish();
+            List<String> food = new List<String>();
+            food.Add("fries");
+            food.Add("pizza");
+            food.Add("hamburger");
+            food.Add("hotdog");
+            food.Add("fries");
 
-            fish.Flee();
-            fish.Hunt();
+            Console.WriteLine(food.LastIndexOf("fries"));
 
-            hawk.Hunt();
+            Console.WriteLine(food.Contains("pizza"));
 
-            rabbit.Flee();
+            //food.Sort();
+            //food.Reverse();
+
+            //food.Clear();
+
+            //food.Remove("fries");
+            //food.Insert(0, "sushi");
+
+            //Console.WriteLine(food.Count);
+
+            //Console.WriteLine(food.IndexOf("pizza"));
+
+            String[] foodArray = food.ToArray();
+
+            foreach(String item in food)
+            {
+                Console.WriteLine(item);
+            }
 
             Console.ReadKey();
         }
         
-    }
-    interface IPrey
-    {
-        void Flee();
-    }
-    interface IPredator
-    {
-        void Hunt();
-    }
-   class Rabbit : IPrey
-    {
-        public void Flee()
-        {
-            Console.WriteLine("The rabbit runs away!");
-        }       
-    }
-    class Hawk : IPredator
-    {
-        public void Hunt()
-        {
-            Console.WriteLine("The hawk is searching for food");
-        }
-    }
-    class Fish : IPrey, IPredator
-    {
-        public void Flee()
-        {
-            Console.WriteLine("The fish swims away");
-        }
-        public void Hunt()
-        {
-            Console.WriteLine("The fish is searching for smaller fish");
-        }
     }
 
 }
