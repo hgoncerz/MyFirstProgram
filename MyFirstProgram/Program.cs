@@ -11,6 +11,7 @@ namespace MyFirstProgram
 
             Console.WriteLine(Car.numberOfCars);
             Car.StartRade();
+            Console.WriteLine("test");
 
             Console.ReadLine();
 
