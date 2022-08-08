@@ -7,39 +7,37 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
-            List<String> food = new List<String>();
-            food.Add("fries");
-            food.Add("pizza");
-            food.Add("hamburger");
-            food.Add("hotdog");
-            food.Add("fries");
 
-            Console.WriteLine(food.LastIndexOf("fries"));
+            List <Player> players = new List <Player> ();
+            Player player1 = new Player("Chad");
+            Player player2 = new Player("Steve");
+            Player player3 = new Player("Karen");
 
-            Console.WriteLine(food.Contains("pizza"));
+            players.Add(player1);
+            players.Add(player2);
+            players.Add(player3);
 
-            //food.Sort();
-            //food.Reverse();
-
-            //food.Clear();
-
-            //food.Remove("fries");
-            //food.Insert(0, "sushi");
-
-            //Console.WriteLine(food.Count);
-
-            //Console.WriteLine(food.IndexOf("pizza"));
-
-            String[] foodArray = food.ToArray();
-
-            foreach(String item in food)
+            foreach(Player player in players)
             {
-                Console.WriteLine(item);
+                Console.WriteLine(player);
             }
 
             Console.ReadKey();
         }
         
+    }
+    class Player
+    {
+        public String username;
+
+        public Player(String username)
+        {
+            this.username = username; 
+        }
+        public override string ToString()
+        {
+            return username;
+        }
     }
 
 }
