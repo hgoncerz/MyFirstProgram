@@ -6,48 +6,52 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
-            Car car =  new Car();
-            Bicycle bicycle = new Bicycle();    
-            Boat boat = new Boat();
+            Rabbit rabbit = new Rabbit();
+            Hawk hawk = new Hawk();
+            Fish fish = new Fish();
 
-            Vehicle[] vehicles = { car, bicycle, boat };
+            fish.Flee();
+            fish.Hunt();
 
-            foreach(Vehicle vehicle in vehicles)
-            {
-                vehicle.Go();
-            }
-           
+            hawk.Hunt();
+
+            rabbit.Flee();
 
             Console.ReadKey();
         }
         
     }
-    class Vehicle
+    interface IPrey
     {
-        public virtual void Go()
+        void Flee();
+    }
+    interface IPredator
+    {
+        void Hunt();
+    }
+   class Rabbit : IPrey
+    {
+        public void Flee()
         {
-
+            Console.WriteLine("The rabbit runs away!");
+        }       
+    }
+    class Hawk : IPredator
+    {
+        public void Hunt()
+        {
+            Console.WriteLine("The hawk is searching for food");
         }
     }
-    class Car:Vehicle
+    class Fish : IPrey, IPredator
     {
-        public override void Go()
+        public void Flee()
         {
-            Console.WriteLine("The car is movieng! ");
+            Console.WriteLine("The fish swims away");
         }
-    }
-    class Bicycle : Vehicle
-    {
-        public override void Go()
+        public void Hunt()
         {
-            Console.WriteLine("The bicycle is movieng! ");
-        }
-    }
-    class Boat : Vehicle
-    {
-        public override void Go()
-        {
-            Console.WriteLine("The boat is movieng! ");
+            Console.WriteLine("The fish is searching for smaller fish");
         }
     }
 
