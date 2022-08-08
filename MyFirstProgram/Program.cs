@@ -7,36 +7,27 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
+            int[] intArray = { 1, 2, 3 };
+            double[] doubleArray = { 1.0, 2.0, 3.0 };
+            String[] stringArray = { "1", "2", "3" };
 
-            /*Console.WriteLine(Planets.Earth + "is a planet #"+(int)Planets.Earth);*/
-            String name = PlanetRadius.Earth.ToString();
-            int radius = (int)PlanetRadius.Earth;
+            displayElemnts(intArray);
+            displayElemnts(doubleArray);
+            displayElemnts(stringArray);
 
-            double volume = Volume(PlanetRadius.Earth);
-
-            Console.WriteLine("planet: " + name);
-            Console.WriteLine("Radius: " + radius);
-            Console.WriteLine("Volume " + volume);
             Console.ReadKey();
         }
-        public static double Volume(PlanetRadius radius)
+        public static void displayElemnts<Thing>(Thing[] array)
         {
-            double volume = (4.0 / 3.0) * Math.PI * Math.Pow((int)radius, 3);
-            return volume;
+           foreach(Thing item in array)
+            {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine();
         }
+       
         
     }
-    enum Planets
-    {
-        Mercury,
-        Vnus,
-        Earth
-    }
-    enum PlanetRadius
-    {
-        Mercury = 2439,
-        Venus = 6051,
-        Earth = 6471
-    }
+
 
 }
