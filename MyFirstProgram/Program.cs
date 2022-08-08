@@ -6,35 +6,49 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
-            Car car = new Car("Chevy", "Corvette", 2022, "Blue");
+            Car car =  new Car();
+            Bicycle bicycle = new Bicycle();    
+            Boat boat = new Boat();
 
-            Console.WriteLine(car);
+            Vehicle[] vehicles = { car, bicycle, boat };
+
+            foreach(Vehicle vehicle in vehicles)
+            {
+                vehicle.Go();
+            }
+           
 
             Console.ReadKey();
         }
         
     }
-    class Car
+    class Vehicle
     {
-        String make;
-        String model;
-        int year;
-        String color;
-
-        public Car(string make, string model, int year, string color)
-        {
-            this.make = make;
-            this.model = model;
-            this.year = year;
-            this.color = color;
-        }
-        public override string ToString()
+        public virtual void Go()
         {
 
-            String message = "This is a " + make + " " + model;
-            return message;
         }
     }
-
+    class Car:Vehicle
+    {
+        public override void Go()
+        {
+            Console.WriteLine("The car is movieng! ");
+        }
+    }
+    class Bicycle : Vehicle
+    {
+        public override void Go()
+        {
+            Console.WriteLine("The bicycle is movieng! ");
+        }
+    }
+    class Boat : Vehicle
+    {
+        public override void Go()
+        {
+            Console.WriteLine("The boat is movieng! ");
+        }
+    }
 
 }
